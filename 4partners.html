@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4Partners — инвестиции в международный e-commerce</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Geologica:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #FFEB5A;
+      --amber: #FFC631;
+      --green: #90FF55;
+      --green2: #B5FF44;
+      --pink: #F21C69;
+      --ink: #222222;
+      --bg: #FFFFFF;
+      --gray: #F9F9F9;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Geologica", sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      text-align: left; /* ВАЖНО — все тексты по левому краю */
+    }
+
+    .slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+      font-family: "Geologica", sans-serif;
+      background-color: var(--bg);
+      text-align: left; /* дополнительное выравнивание */
+    }
+
+    .slide:nth-child(even) {
+      background-color: var(--gray);
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: left; /* выравнивание контента внутри секций */
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--ink);
+      padding: 48px 16px;
+    }
+
+    .hero__logo {
+      height: 60px;
+      margin-bottom: 24px;
+    }
+
+    .hero__title {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.3;
+      max-width: 680px;
+      margin: 0 auto 16px;
+    }
+
+    .hero__lead {
+      font-family: "Geologica", sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 0;
+    }
+
+    .hero__logos {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      margin-top: 8px;
+      height: 32px;
+    }
+
+    .hero__logos img {
+      height: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .hero__title {
+        font-size: 32px;
+      }
+    }
+
+    .offer {
+      text-align: center;
+      padding: 64px 16px;
+    }
+
+    .offer__title {
+      font-family: "Unbounded", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .offer__subtitle {
+      font-family: "Geologica", sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 32px;
+    }
+
+    .offer__cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .offer-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+
+    .offer-card h3 {
+      font-family: "Unbounded", sans-serif;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .offer-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .offer-card li {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .offer__terms ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 32px;
+      max-width: 400px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .offer__note {
+      background: linear-gradient(135deg, var(--amber), var(--yellow));
+      border-radius: 16px;
+      padding: 16px;
+      font-family: "Geologica", sans-serif;
+      font-weight: 500;
+      color: var(--ink);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .offer__cards {
+        flex-direction: row;
+        justify-content: center;
+      }
+      .offer-card {
+        flex: 1;
+        max-width: 360px;
+      }
+    }
+
+    .trade-flow {
+      padding: 64px 16px;
+    }
+
+    .trade-flow__title {
+      font-family: "Unbounded", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    .trade-flow__text {
+      font-family: "Geologica", sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .trade-flow__subtitle {
+      font-family: "Unbounded", sans-serif;
+      font-size: 18px;
+      margin: 24px 0 12px;
+    }
+
+    .trade-flow__list {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      padding-left: 20px;
+    }
+
+    .trade-flow__diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .trade-flow__block {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 16px;
+      padding: 16px;
+      width: 160px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .trade-flow__icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .trade-flow__label {
+      font-family: "Geologica", sans-serif;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .trade-flow__price {
+      font-size: 15px;
+      color: #555;
+      margin: 0;
+    }
+
+    .trade-flow__arrow {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--pink);
+    }
+
+    .trade-flow__logos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .trade-flow__logos img {
+      height: 24px;
+    }
+
+    .trade-flow__caption {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      color: #444;
+      max-width: 480px;
+    }
+
+    @media (min-width: 768px) {
+      .trade-flow__logos {
+        flex-direction: row;
+        gap: 16px;
+      }
+    }
+
+    .business {
+      padding: 64px 16px;
+    }
+
+    .business__title {
+      font-family: "Unbounded", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--ink);
+    }
+
+    .business__subtitle {
+      font-family: "Unbounded", sans-serif;
+      font-size: 18px;
+      margin: 32px 0 12px;
+      color: var(--ink);
+    }
+
+    .business__list {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      padding-left: 20px;
+    }
+
+    .model {
+      padding: 64px 16px;
+    }
+
+    .model__title {
+      font-family: "Unbounded", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    .model__intro {
+      font-family: "Geologica", sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .model__subtitle {
+      font-family: "Unbounded", sans-serif;
+      font-size: 18px;
+      margin: 24px 0 12px;
+      color: var(--ink);
+    }
+
+    .model__steps {
+      list-style: none;
+      counter-reset: step;
+      padding: 0;
+      margin: 0 0 24px;
+    }
+
+    .model__steps li {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .model__steps li::before {
+      counter-increment: step;
+      content: counter(step) ".";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      color: var(--pink);
+    }
+
+    .model__summary {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      margin: 16px 0 32px;
+    }
+
+    .model__list {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      padding-left: 20px;
+    }
+
+    .model__note {
+      background: linear-gradient(135deg, var(--amber), var(--yellow));
+      border-radius: 16px;
+      padding: 16px;
+      font-family: "Geologica", sans-serif;
+      font-weight: 500;
+      color: var(--ink);
+      margin-top: 32px;
+      max-width: 520px;
+    }
+
+    .structure {
+      padding: 64px 16px;
+    }
+
+    .structure__title {
+      font-family: "Unbounded", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .structure__sum {
+      font-family: "Geologica", sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .structure__subtitle {
+      font-family: "Unbounded", sans-serif;
+      font-size: 18px;
+      margin: 32px 0 16px;
+      color: var(--ink);
+    }
+
+    .structure__formats {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .structure__block {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .structure__block h4 {
+      font-family: "Unbounded", sans-serif;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .structure__block ul {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .structure__usage {
+      list-style: none;
+      counter-reset: step;
+      padding: 0;
+      margin: 0;
+    }
+
+    .structure__usage li {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .structure__usage li::before {
+      counter-increment: step;
+      content: counter(step) ".";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .advantages {
+      padding: 64px 16px;
+    }
+
+    .advantages__title {
+      font-family: "Unbounded", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: var(--ink);
+    }
+
+    .advantages__group {
+      margin-bottom: 32px;
+    }
+
+    .advantages__group h3 {
+      font-family: "Unbounded", sans-serif;
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .advantages__group ul {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink);
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .metrics {
+      padding: 64px 16px;
+    }
+
+    .metrics__title {
+      font-family: "Unbounded", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .metrics__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .metrics__card {
+      background: #fff;
+      border: 1px solid #e9e9e9;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .metrics__card h3 {
+      font-family: "Unbounded", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+
+    .metrics__card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .metrics__card li + li {
+      margin-top: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .metrics__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+    }
+
+    .legal {
+      padding: 64px 16px;
+    }
+
+    .legal__title {
+      font-family: "Unbounded", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 32px;
+    }
+
+    .legal__block {
+      margin-bottom: 40px;
+    }
+
+    .legal__block h3 {
+      font-family: "Unbounded", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    .legal__list {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    .legal__list li {
+      margin-bottom: 10px;
+    }
+
+    .legal__list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .contacts {
+      padding: 64px 16px;
+      background-color: #f7f7f7;
+    }
+
+    .contacts__title {
+      font-family: "Unbounded", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 32px;
+    }
+
+    .contacts__info {
+      font-family: "Geologica", sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    .contacts__info p {
+      margin-bottom: 16px;
+    }
+
+    .contacts__info a {
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+      transition: 0.2s ease;
+    }
+
+    .contacts__info a:hover {
+      color: #000;
+      border-bottom-color: #000;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+  <section class="hero">
+    <div class="container measure">
+        <img
+          src="https://static.tildacdn.com/tild3965-6638-4463-b866-656164343762/4partners.svg"
+          alt="4Partners"
+          class="hero__logo"
+        >
+        <h1 class="hero__title">
+          Инвестиции в оборотный капитал Топ-1 кроссбордер-поставщика в&nbsp;России
+        </h1>
+        <p class="hero__lead">
+          Продаем зарубежные товары на крупнейших маркетплейсах
+        </p>
+        <div class="hero__logos">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Ozon_logo_clear.svg/2560px-Ozon_logo_clear.svg.png" alt="Ozon" />
+          <img src="https://www.letu.ru/common/img/logo/letu-logo.svg" alt="Л'Этуаль" />
+          <img src="https://www.sportmaster.ru/media/main-logo.svg" alt="Спортмастер" />
+        </div>
+    </div>
+  </section>
+  
+    <section id="slide-2" class="slide">
+      <div class="offer">
+    <div class="container">
+          <h2 class="offer__title">
+            Инвестиции в оборотный капитал 4Partners — до 28 % годовых в евро
+          </h2>
+          <p class="offer__subtitle">
+            Два формата участия: фикс 15 % или доля в прибыли (8–28 %). Выплаты каждые 4 месяца.
+          </p>
+
+          <div class="offer__cards">
+            <article class="offer-card offer-card--fixed">
+              <h3>Фиксированный доход</h3>
+              <ul>
+                <li>15 % годовых в евро</li>
+                <li>Выплаты каждые 4 месяца</li>
+              </ul>
+            </article>
+
+            <article class="offer-card offer-card--share">
+              <h3>Доля в прибыли</h3>
+              <ul>
+                <li>До 28 % годовых в евро</li>
+                <li>Фактический диапазон 8–28 %</li>
+                <li>Доходность зависит от результатов торговых циклов</li>
+          </ul>
+            </article>
+        </div>
+
+          <div class="offer__terms">
+            <ul>
+              <li>Валюта инвестиций — EUR</li>
+              <li>Минимальная сумма: 500 000 €</li>
+              <li>Срок размещения: от 4 месяцев (1 цикл)</li>
+              <li>Возможность реинвестирования после каждого цикла</li>
+          </ul>
+        </div>
+
+          <aside class="offer__note" role="note">
+            Доходность в 4–10 раз выше ставок по депозитам в евро. Прозрачная модель и реальный товарный оборот.
+          </aside>
+      </div>
+    </div>
+  </section>
+    <section id="slide-3" class="slide">
+      <div class="business">
+    <div class="container">
+          <h2 class="business__title">Мы зарабатываем на реальном обороте брендовых товаров</h2>
+
+          <h3 class="business__subtitle">Как работает модель</h3>
+          <ul class="business__list">
+            <li>Закупаем товары напрямую у поставщиков в Европе и Азии по оптовым ценам.</li>
+            <li>Доставляем и храним на собственных складах.</li>
+            <li>Реализуем через маркетплейсы в России.</li>
+            <li>Средний цикл «cash-to-cash» — <strong>58 дней</strong>.</li>
+          </ul>
+
+          <h3 class="business__subtitle">Результаты</h3>
+          <ul class="business__list">
+            <li><strong>Годовой оборот:</strong> ≈ 1 млрд ₽</li>
+            <li>Потенциал продаж значительно выше — ограничение только в оборотных средствах.</li>
+      </ul>
+      </div>
+    </div>
+  </section>
+    <section id="slide-4" class="slide">
+      <div class="model">
+    <div class="container">
+          <h2 class="model__title">Как работает модель</h2>
+          <p class="model__intro">
+            Минимальный цикл оборачиваемости инвестиций — 4 месяца.
+          </p>
+
+          <h3 class="model__subtitle">Этапы цикла</h3>
+          <ol class="model__steps">
+            <li>
+              <strong>Получение заказов и закупка товаров — до 30 дней</strong><br>
+              Анализ спроса, формирование заказа поставщику, оплата и подготовка отгрузки.
+            </li>
+            <li>
+              <strong>Логистика и складская обработка — до 30 дней</strong><br>
+              Международная доставка до склада, приёмка и подготовка к продаже.
+            </li>
+            <li>
+              <strong>Продажа через маркетплейсы — до 30 дней</strong><br>
+              Размещение и реализация товаров.
+            </li>
+            <li>
+              <strong>Получение расчётов — до 30 дней</strong><br>
+              Маркетплейсы перечисляют оплату на расчётный счёт.
+            </li>
+          </ol>
+
+          <p class="model__summary">
+            🕓 Полный цикл — около 120 дней (4 месяца)
+          </p>
+
+          <h3 class="model__subtitle">Доходность</h3>
+          <ul class="model__list">
+            <li><strong>Фиксированный формат:</strong> 15 % годовых в евро</li>
+            <li><strong>Доля в марже:</strong> от 8 до 28 % годовых в евро</li>
+            <li>Фактическая доходность зависит от динамики продаж и оборачиваемости</li>
+      </ul>
+
+          <blockquote class="model__note">
+            Один цикл = четыре месяца.<br>
+            После каждого цикла инвестор получает выплату и может решить — реинвестировать или забрать капитал.
+          </blockquote>
+      </div>
+    </div>
+  </section>
+    <section id="slide-5" class="slide">
+      <div class="structure">
+    <div class="container">
+          <h2 class="structure__title">Структура инвестиций</h2>
+          <p class="structure__sum">Привлекаемая сумма — <strong>500 000 €</strong></p>
+
+          <h3 class="structure__subtitle">Форматы участия</h3>
+
+          <div class="structure__formats">
+            <div class="structure__block">
+              <h4>Фиксированный доход</h4>
+              <ul>
+                <li>15 % годовых в евро</li>
+                <li>Выплаты каждые 4 месяца</li>
+              </ul>
+            </div>
+
+            <div class="structure__block">
+              <h4>Доля в маржинальности</h4>
+              <ul>
+                <li>До 28 % годовых в евро (фактический диапазон 8–28 %)</li>
+                <li>Доходность зависит от результатов торговых циклов</li>
+      </ul>
+    </div>
+          </div>
+
+          <h3 class="structure__subtitle">Использование инвестиций</h3>
+          <ol class="structure__usage">
+            <li><strong>Закупка товаров</strong> — основная часть капитала направляется на пополнение товарных запасов.</li>
+            <li><strong>Складская обработка и логистика</strong> — оплата хранения, упаковки и внутренней транспортировки.</li>
+            <li><strong>Международная доставка</strong> — доставка товаров из стран-поставщиков в Россию.</li>
+          </ol>
+      </div>
+    </div>
+  </section>
+    <section id="slide-6" class="slide">
+      <div class="advantages">
+    <div class="container">
+          <h2 class="advantages__title">Почему выгодно инвестировать в нас</h2>
+
+          <div class="advantages__group">
+            <h3>Высокая доходность</h3>
+            <ul>
+              <li>15 % фиксированных годовых в евро или 8–28 % при участии в маржинальности.</li>
+              <li>В 4–10 раз выше, чем доходность банковских вкладов в валюте.</li>
+            </ul>
+          </div>
+
+          <div class="advantages__group">
+            <h3>Короткий цикл</h3>
+            <ul>
+              <li>Минимальный срок вложений — 4 месяца.</li>
+              <li>После каждого цикла инвестор получает выплату и может забрать капитал или реинвестировать.</li>
+            </ul>
+          </div>
+
+          <div class="advantages__group">
+            <h3>Прозрачность и контроль</h3>
+            <ul>
+              <li>Средства работают только в товарном обороте.</li>
+              <li>Подробная отчётность после каждого цикла.</li>
+              <li>Без скрытых расходов и комиссий.</li>
+      </ul>
+    </div>
+
+          <div class="advantages__group">
+            <h3>Доверие и опыт</h3>
+            <ul>
+              <li>Топ-1 кроссбордер-поставщик в России.</li>
+              <li>Работаем с крупнейшими маркетплейсами: Ozon, Л'Этуаль, Спортмастер и др.</li>
+              <li>Более двух лет стабильных выплат инвесторам без просрочек.</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </section>
+    <section id="slide-7" class="slide">
+      <div class="metrics">
+        <div class="container">
+          <h2 class="metrics__title">Дополнительные показатели для инвестора</h2>
+
+          <div class="metrics__grid">
+            <article class="metrics__card">
+              <h3>Финансовые показатели</h3>
+              <ul>
+                <li><strong>Историческая доходность инвесторов:</strong> 23,2 % годовых</li>
+                <li><strong>Годовой оборот компании:</strong> 1 млрд ₽</li>
+                <li><strong>Средний срок оборачиваемости капитала:</strong> 4 месяца</li>
+                <li><strong>90 % средств возвращаются</strong> в течение 58 дней</li>
+              </ul>
+            </article>
+
+            <article class="metrics__card">
+              <h3>Надёжность и прозрачность</h3>
+              <ul>
+                <li><strong>Просрочки выплат:</strong> 0 % за 2 года</li>
+                <li><strong>Собственные вложения команды:</strong> 2 млн €</li>
+                <li><strong>Без кредитной нагрузки</strong> — проект не использует банковские займы</li>
+                <li><strong>Отчётность</strong> после каждого инвестиционного цикла</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="slide-8" class="slide">
+      <div class="legal">
+        <div class="container">
+          <h2 class="legal__title">Юридическая защита инвестора</h2>
+
+          <div class="legal__block">
+            <h3>Надёжные правовые гарантии</h3>
+            <ul class="legal__list">
+              <li>Все инвестиции оформляются официальным договором займа или договором участия в прибыли.</li>
+              <li>Каждая операция фиксируется и подтверждается документально.</li>
+              <li>После каждого инвестиционного цикла инвестор получает отчёт о движении средств и доходности.</li>
+            </ul>
+          </div>
+
+          <div class="legal__block">
+            <h3>Гибкие способы участия</h3>
+            <ul class="legal__list">
+              <li>Возможна оплата и возврат средств через банковский перевод в Европе, криптовалюту или наличный расчёт (по согласованию).</li>
+              <li>Формат участия подбирается индивидуально для каждого инвестора.</li>
+            </ul>
+          </div>
+
+          <div class="legal__block">
+            <h3>Юридическая база</h3>
+            <ul class="legal__list">
+              <li>Компании зарегистрированы и действуют в ЕС и ОАЭ.</li>
+              <li>Прозрачная отчётность, соответствие международным стандартам.</li>
+              <li>Средства инвестора защищены договорными обязательствами и отражаются в официальном учёте.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="slide-9" class="slide">
+      <div class="contacts">
+        <div class="container">
+          <h2 class="contacts__title">Контакты</h2>
+
+          <div class="contacts__info">
+            <p class="contacts__company"><strong>4Partners</strong><br>Топ-1 кроссбордер-поставщик товаров в Россию</p>
+
+            <p><strong>Офисы:</strong><br>Европейский Союз<br>Объединённые Арабские Эмираты</p>
+
+            <p><strong>Связь:</strong><br>
+              Telegram / WhatsApp: <a href="tel:+971500000000">+971 50 000 0000</a><br>
+              Email: <a href="mailto:invest@4partners.global">invest@4partners.global</a><br>
+              Сайт: <a href="https://www.4partners.global" target="_blank">www.4partners.global</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
